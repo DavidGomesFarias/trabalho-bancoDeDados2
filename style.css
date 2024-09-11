@@ -1,0 +1,99 @@
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    height: 200px;
+    border-bottom: 2px solid #ccc;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 50px;
+}
+
+.nav p {
+    padding: 10px;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none;
+}
+
+.nav p:hover {
+    scale: 1.1;
+    transition: .3s;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerMain {
+    margin-top: 50px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 10px #ccc;
+    padding: 20px 50px;
+}
+
+.containerMain h2 {
+    font-weight: bold;
+}
+
+.containerMain p {
+    font-size: 17px;
+}
+
+.containerMain .indexacao, 
+.containerMain .btree, 
+.containerMain .hash, 
+.containerMain .bitmap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.active {
+    border-bottom: 2px solid #000;
+}
+
+@media(max-width: 480px) {
+    .header {
+        height: 100px;
+    }
+    .nav {
+        font-size: 12px;
+    }
+
+    .containerMain {
+        max-width: 200px;
+    }
+
+    .containerMain h2 {
+        font-size: 20px;
+    }
+
+    .containerMain p {
+        font-size: 12px;
+    }
+
+    .active {
+        border-bottom: 1px solid #000;
+    }
+}

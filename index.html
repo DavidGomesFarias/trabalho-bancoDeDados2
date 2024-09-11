@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Trabalho Banco de Dados 2</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <p class="pIndexacao">Indexação</p>
+        <p class="pBtree">B-Tree</p>
+        <p class="pHash">Hash</p>
+        <p class="pBitmap">BiTmap</p>
+      </nav>
+    </header>
+
+    <main class="main">
+      <div class="containerMain" style="display: none;">
+        <div class="indexacao" style="display: none;">
+          <h2>Indexação de banco de dados:</h2>
+          <p>
+            A indexação é uma técnica usada para melhorar a velocidade de
+            recuperação de dados em um banco de dados. Assim como em um livro,
+            onde um índice permite encontrar informações rapidamente sem
+            precisar ler todas as páginas, um índice em um banco de dados
+            permite acessar linhas específicas de uma tabela sem precisar varrer
+            a tabela inteira. Isso é particularmente útil em tabelas grandes.
+          </p>
+          <h2>Conceito de Índices:</h2>
+          <p>
+            Índices são estruturas de dados criadas sobre uma ou mais colunas de
+            uma tabela, destinadas a otimizar as operações de busca, como
+            consultas (SELECT), filtragem (WHERE), junções (JOIN), e ordenações
+            (ORDER BY). Eles armazenam uma cópia ordenada dos dados selecionados
+            das colunas indexadas, permitindo acesso mais rápido.
+          </p>
+        </div>
+        <div class="btree" style="display: none;">
+          <h2>B-tree Index (Índice em Árvore B):</h2>
+          <p>
+            O índice B-tree é o tipo de índice mais comum nos sistemas de
+            gerenciamento de banco de dados (SGBDs). Ele organiza os dados em
+            uma estrutura de árvore balanceada, onde os nós representam blocos
+            de dados. Essa árvore permite que o SGBD encontre os registros de
+            forma eficiente, mesmo em tabelas grandes. A busca, inserção, e
+            exclusão de registros têm complexidade logarítmica, o que
+            proporciona boa performance para uma ampla variedade de consultas.
+          </p>
+        </div>
+        <div class="hash" style="display: none;">
+          <h2>Hash Index:</h2>
+          <p>
+            O índice hash é usado para busca de igualdade, ou seja, quando a
+            consulta é do tipo "igual a" (ex.: `WHERE campo = valor`). Ele usa
+            uma função de dispersão (hash) para mapear valores de índice
+            diretamente para um local no disco, permitindo buscas muito rápidas.
+            No entanto, ele não é eficiente para consultas que envolvem
+            intervalos (ex.: `WHERE campo > valor`), pois os valores são
+            armazenados de forma não ordenada.
+          </p>
+        </div>
+        <div class="bitmap" style="display: none;">
+          <h2>Bitmap Index:</h2>
+          <p>
+            O índice bitmap é utilizado principalmente em tabelas com colunas de
+            poucos valores distintos (alta cardinalidade). Ele armazena uma
+            série de bits, onde cada bit indica a presença ou ausência de um
+            determinado valor em uma linha. Esses índices são particularmente
+            eficientes em consultas complexas que envolvem múltiplas condições
+            (ex.: `WHERE` com várias colunas), já que podem combinar bitmaps
+            rapidamente usando operações lógicas (AND, OR). Eles são mais comuns
+            em ambientes de data warehouse.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
